@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package view.validations.message;
 
 import java.util.Scanner;
-import view.validations.ValidarConMensaje;
+import view.validations.Validar;
 
-/**
- *
- * @author Usuario
- */
-public class ValidarTexto implements ValidarConMensaje{
+public class ValidarTexto implements Validar<String>{
 
     @Override
-    public Object validar(String mensaje) {
+    public String validar(String mensaje) {
         boolean validacion;
         String texto = "";
         Scanner x = new Scanner(System.in);

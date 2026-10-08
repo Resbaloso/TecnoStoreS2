@@ -1,11 +1,11 @@
 package view.validations.option;
 
-import view.validations.ValidarConOpcion;
+import view.validations.Validar;
 
-public class ValidarEnteroMenu implements ValidarConOpcion{
+public class ValidarEnteroMenu implements Validar<Boolean>{
 
     @Override
-    public Object validar(String op) {
+    public Boolean validar(String op) {
         for (int i = 0; i < op.length(); i++) {
             if (!Character.isDigit(op.charAt(i))) {
                 return false;
