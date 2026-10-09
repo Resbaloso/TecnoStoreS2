@@ -1,5 +1,4 @@
-
-import java.util.Scanner;
+package com.s2.tecnostore;
 
 public class TecnoStore {
 
