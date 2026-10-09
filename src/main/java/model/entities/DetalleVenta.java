@@ -1,56 +1,56 @@
 package model.entities;
 
 public class DetalleVenta {
-    private Integer id;
-    private Integer ventas_fk;
-    private Integer celulares_fk;
-    private Integer cantidad;
-    private Integer precios_fk;
+    private int id;
+    private int ventas_fk;
+    private int celulares_fk;
+    private int cantidad;
+    private int precio;
     private Double subtotal;
 
-    public DetalleVenta(Integer id, Integer ventas_fk, Integer celulares_fk, Integer cantidad, Integer precios_fk, Double subtotal) {
+    public DetalleVenta(int id, int ventas_fk, int celulares_fk, int cantidad, int precio, Double subtotal) {
         this.id = id;
         this.ventas_fk = ventas_fk;
         this.celulares_fk = celulares_fk;
         this.cantidad = cantidad;
-        this.precios_fk = precios_fk;
+        this.precio = precio;
         this.subtotal = subtotal;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public Integer getVentas_fk() {
+    public int getVentas_fk() {
         return ventas_fk;
     }
 
-    public void setVentas_fk(Integer ventas_fk) {
+    public void setVentas_fk(int ventas_fk) {
         this.ventas_fk = ventas_fk;
     }
 
-    public Integer getCelulares_fk() {
+    public int getCelulares_fk() {
         return celulares_fk;
     }
 
-    public void setCelulares_fk(Integer celulares_fk) {
+    public void setCelulares_fk(int celulares_fk) {
         this.celulares_fk = celulares_fk;
     }
 
-    public Integer getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Integer cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public Integer getPrecios_fk() {
-        return precios_fk;
+    public int getPrecios_fk() {
+        return precio;
     }
 
-    public void setPrecios_fk(Integer precios_fk) {
-        this.precios_fk = precios_fk;
+    public void setPrecios_fk(int precios_fk) {
+        this.precio = precios_fk;
     }
 
     public Double getSubtotal() {
@@ -68,9 +68,9 @@ public class DetalleVenta {
                 Ventas_fk:                    %s
                 Celulares_fk:                 %s
                 Cantidad:                     %s
-                Precios_fk:                   %s
+                Precios:                      %s
                 Subtotal:                     %s
-                """.formatted(id, ventas_fk, celulares_fk, cantidad, precios_fk, subtotal);
+                """.formatted(id, ventas_fk, celulares_fk, cantidad, precio, subtotal);
     }
     
 }

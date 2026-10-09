@@ -9,15 +9,15 @@ package model.entities;
  * @author Usuario
  */
 public class SistemasOperativos {
-    private Integer id;
+    private int id;
     private String nombre;
 
-    public SistemasOperativos(Integer id, String nombre) {
+    public SistemasOperativos(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 

@@ -1,15 +1,15 @@
 package model.entities;
 
 public class Marca {
-    private Integer id;
+    private int id;
     private String nombre;
 
-    public Marca(Integer id, String nombre) {
+    public Marca(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 

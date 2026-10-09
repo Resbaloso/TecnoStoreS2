@@ -1,12 +1,12 @@
 package model.entities;
 
 public class Venta{
-    private Integer id;
-    private Integer usuarios_fk;
+    private int id;
+    private int usuarios_fk;
     private java.time.OffsetDateTime fecha;
     private Double total;  
 
-    public Venta(Integer id, Integer usuarios_fk, java.time.OffsetDateTime fecha, Double total) {
+    public Venta(int id, int usuarios_fk, java.time.OffsetDateTime fecha, Double total) {
         this.id = id;
         this.usuarios_fk = usuarios_fk;
         this.fecha = fecha;
@@ -21,7 +21,7 @@ public class Venta{
         return usuarios_fk;
     }
 
-    public void setUsuarios_fk(Integer usuarios_fk) {
+    public void setUsuarios_fk(int usuarios_fk) {
         this.usuarios_fk = usuarios_fk;
     }
 

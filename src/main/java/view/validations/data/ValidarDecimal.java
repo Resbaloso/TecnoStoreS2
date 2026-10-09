@@ -17,3 +17,4 @@ public class ValidarDecimal implements Validar<Double>{
     }
     
 }
+

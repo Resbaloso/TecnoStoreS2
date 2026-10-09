@@ -1,15 +1,15 @@
 package model.entities;
 
 public class Rol {
-    private Integer id;
+    private int id;
     private String rol;
 
-    public Rol(Integer id, String rol) {
+    public Rol(int id, String rol) {
         this.id = id;
         this.rol = rol;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     } 
 

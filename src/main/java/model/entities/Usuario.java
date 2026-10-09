@@ -1,13 +1,13 @@
 package model.entities;
 
 public class Usuario {
-    private Integer id;
-    private Integer personas_fk;
+    private int id;
+    private int personas_fk;
     private String username;
     private String contraseña;
-    private Integer roles_fk;    
+    private int roles_fk;    
 
-    public Usuario(Integer id, Integer personas_fk, String username, String contraseña, Integer roles_fk) {
+    public Usuario(int id, int personas_fk, String username, String contraseña, int roles_fk) {
         this.id = id;
         this.personas_fk = personas_fk;
         this.username = username;
@@ -15,15 +15,15 @@ public class Usuario {
         this.roles_fk = roles_fk;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public Integer getPersonas_fk() {
+    public int getPersonas_fk() {
         return personas_fk;
     }
 
-    public void setPersonas_fk(Integer personas_fk) {
+    public void setPersonas_fk(int personas_fk) {
         this.personas_fk = personas_fk;
     }
 
@@ -47,7 +47,7 @@ public class Usuario {
         return roles_fk;
     }
 
-    public void setRoles_fk(Integer roles_fk) {
+    public void setRoles_fk(int roles_fk) {
         this.roles_fk = roles_fk;
     }
 
