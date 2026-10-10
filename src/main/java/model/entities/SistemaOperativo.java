@@ -8,11 +8,11 @@ package model.entities;
  *
  * @author Usuario
  */
-public class SistemasOperativos {
+public class SistemaOperativo {
     private int id;
     private String nombre;
 
-    public SistemasOperativos(int id, String nombre) {
+    public SistemaOperativo(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
