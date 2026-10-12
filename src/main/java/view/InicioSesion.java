@@ -3,7 +3,7 @@ package view;
 import java.util.Scanner;
 import view.validations.data.ValidarEntero;
 
-public class InicioSeccion {
+public class InicioSesion {
     public int mostrarMenuPrincipal() {
     ValidarEntero v=new ValidarEntero();
     return v.validar(""" 

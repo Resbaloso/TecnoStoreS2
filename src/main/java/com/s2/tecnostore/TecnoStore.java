@@ -1,11 +1,11 @@
 package com.s2.tecnostore;
 
-import controller.InicioSeccionController;
+import controller.InicioSesionController;
 import model.entities.Usuario;
 
 public class TecnoStore {
     public static void main(String[] args) {
-        Usuario usuarioActivo = InicioSeccionController.iniciarFlujoIngreso();
+        Usuario usuarioActivo = InicioSesionController.iniciarFlujoIngreso();
         
         if (usuarioActivo != null) {
             System.out.println("\n[Acceso concedido al sistema principal. Rol ID: " + usuarioActivo.getRoles_fk() + "]");

@@ -4,12 +4,12 @@ import dao.PersonasDao;
 import dao.UsuarioDao;
 import model.entities.Persona;
 import model.entities.Usuario;
-import view.InicioSeccion;
+import view.InicioSesion;
 import view.validations.data.ValidarCorreo;
 
 import java.util.Scanner;
 
-public class InicioSeccionLogic {
+public class InicioSesionLogic {
     private static final Scanner scanner = new Scanner(System.in);
     private static final PersonasDao personasDao = new PersonasDao();
     private static final UsuarioDao usuarioDao = new UsuarioDao();
