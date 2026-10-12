@@ -119,4 +119,57 @@ public class UsuarioDao {
         }
         return null;
     }
+    
+    public boolean existeUsername(String username) {
+        String sql = "select id from usuarios where username = ?";
+        try (Connection con = c.conexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, username);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar username: " + e.getMessage());
+            return true;
+        }
+    }
+
+    public boolean registrarUsuario(Usuario usuario) {
+        String sql = "insert into usuarios (personas_fk, username, contraseña, roles_fk) values (?, ?, ?, ?)";
+        try (Connection con = c.conexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, usuario.getPersonas_fk());
+            ps.setString(2, usuario.getUsername());
+            ps.setString(3, usuario.getContraseña());
+            ps.setInt(4, usuario.getRoles_fk());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error al registrar usuario: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public Usuario iniciarSesion(String username, String password) {
+        String sql = "select id, personas_fk, username, contraseña, roles_fk from usuarios where username = ? AND contraseña = ?";
+        try (Connection con = c.conexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, username);
+            ps.setString(2, password);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Usuario usuario = new Usuario();
+                    usuario.setId(rs.getInt("id"));
+                    usuario.setPersonas_fk(rs.getInt("personas_fk"));
+                    usuario.setUsername(rs.getString("username"));
+                    usuario.setContraseña(rs.getString("contraseña"));
+                    usuario.setRoles_fk(rs.getInt("roles_fk"));
+                    return usuario;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error en la autenticación: " + e.getMessage());
+        }
+        return null;
+    }
 }

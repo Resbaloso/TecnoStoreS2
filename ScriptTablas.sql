@@ -11,7 +11,7 @@ marcas_fk int not null, stock int not null, precio decimal(10,2) not null, siste
 gama enum("baja","media","alta") not null, primary key(id), foreign key(marcas_fk) references marcas(id), foreign key(sistemas_operativos_fk) references sistemas_operativos(id));
 
 create table personas(id int auto_increment, nombre varchar(45) not null, identificacion varchar(45) not null unique, 
-correo varchar(45) not null unique, telefono int, primary key(id));
+correo varchar(45) not null unique, telefono varchar(45), primary key(id));
 
 create table roles(id int auto_increment, rol varchar(45) not null, primary key(id));
 
@@ -25,4 +25,12 @@ foreign key(usuarios_fk) references usuarios(id));
 
 create table detalles_ventas(id int auto_increment, ventas_fk int not null, celulares_fk int not null,
 cantidad int not null, precio decimal(10,2) not null, subtotal decimal(10,2) not null, primary key(id),
-foreign key(ventas_fk) references ventas(id), foreign key(celulares_fk) references celulares(id);
+foreign key(ventas_fk) references ventas(id), foreign key(celulares_fk) references celulares(id));
+
+insert into roles(id, rol) values (1, 'Admin');
+insert into roles(id, rol) values (2, 'Cliente');
+
+insert into personas (nombre, identificacion, correo, telefono) values ('Admin', '1000000001', 'admin@tecnostore.com', '3016767676');
+insert into usuarios (personas_fk, username, contraseña, roles_fk) values (1, 'admin', 'Admincito36', 1);
+select * from personas;
+select * from usuarios;

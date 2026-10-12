@@ -1,13 +1,13 @@
 package model.entities;
 
-public class Personas {
+public class Persona {
     private int id;
     private String nombre;
     private String identificacion;
     private String correo;
-    private int telefono;
+    private String telefono;
 
-    public Personas(int id, String nombre, String identificacion, String correo, int telefono) {
+    public Persona(int id, String nombre, String identificacion, String correo, String telefono) {
         this.id = id;
         this.nombre = nombre;
         this.identificacion = identificacion;
@@ -15,6 +15,8 @@ public class Personas {
         this.telefono = telefono;
     }
 
+    public Persona() {}
+    
     public int getId() {
         return id;
     }
@@ -43,11 +45,11 @@ public class Personas {
         this.correo = correo;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

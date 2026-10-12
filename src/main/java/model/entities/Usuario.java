@@ -14,6 +14,12 @@ public class Usuario {
         this.contraseña = contraseña;
         this.roles_fk = roles_fk;
     }
+    
+    public Usuario() {}
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;
@@ -60,5 +66,9 @@ public class Usuario {
                 Contraseña:                      %s
                 Roles_fk:                        %s
                 """.formatted(id, personas_fk, username, contraseña, roles_fk);
+    }
+
+    public String getRolesFk() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
