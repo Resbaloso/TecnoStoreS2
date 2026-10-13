@@ -1,5 +1,7 @@
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\com\s2\tecnostore\TecnoStore.java
-C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\controller\InicioSeccionController.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\controller\InicioSesionController.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\controller\MenuAdminController.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\controller\MenuUsuarioController.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\controller\UsuarioController.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\dao\CelularesDao.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\dao\Conexion.java
@@ -18,12 +20,15 @@ C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\model\ent
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\model\entities\SistemaOperativo.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\model\entities\Usuario.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\model\entities\Venta.java
-C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\model\logic\InicioSeccionLogic.java
-C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\InicioSeccion.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\model\logic\InicioSesionLogica.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\InicioSesion.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\MenuPrincipalAdmin.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\MenuPrincipalUsuario.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\data\ValidarCorreo.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\data\ValidarDecimal.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\data\ValidarEntero.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\data\ValidarEnteroGrande.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\message\ValidarTexto.java
-C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\option\ValidarEnteroMenu.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\range\validarRangoDato.java
 C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\Validar.java
+C:\Users\Usuario\Documents\NetBeansProjects\TecnoStoreS2\src\main\java\view\validations\ValidarConRango.java
