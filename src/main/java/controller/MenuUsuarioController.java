@@ -1,36 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
+import model.entities.Usuario;
+import model.logic.CompraUsuarioLogica;
 import view.MenuPrincipalUsuario;
 
-/**
- *
- * @author Usuario
- */
+// Controlador del menú principal del usuario cliente.
+// Recibe el usuario activo para pasarlo al módulo de compras.
 public class MenuUsuarioController {
 
-    MenuPrincipalUsuario mpu= new MenuPrincipalUsuario();
-    
-    public void MenuUsuario(){
-            int op;
-            do {
-                op = mpu.mostrarMenuPrincipalUsuario();
-                switch (op) {
-                    case 1 -> {
-                        //Menu compra.
-                    }
-                    case 2 -> {
-                        System.out.println("Saliendo...");
-                        break;
-                    } 
+    private final MenuPrincipalUsuario mpu = new MenuPrincipalUsuario();
+    private final CompraUsuarioLogica compraLogica = new CompraUsuarioLogica();
 
-                    default -> {
-                        System.out.println("Opcion no encontrada!");
-                    }
+    public void MenuUsuario(Usuario usuarioActivo) {
+        int op;
+        do {
+            op = mpu.mostrarMenuPrincipalUsuario();
+            switch (op) {
+                case 1 -> {
+                    // Módulo de compra con el usuario activo en sesión.
+                    compraLogica.ejecutar(usuarioActivo);
                 }
-            } while (op != 2); 
+                case 2 -> {
+                    System.out.println("Saliendo del sistema...");
+                }
+                default -> {
+                    System.out.println("Opcion no encontrada!");
+                }
+            }
+        } while (op != 2);
     }
 }

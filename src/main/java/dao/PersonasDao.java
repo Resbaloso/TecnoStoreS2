@@ -108,6 +108,24 @@ public class PersonasDao {
         return null;
     }
 
+    // Busca una persona por su ID (necesario para el módulo de compras del usuario).
+    public Persona buscarPorId(int id) {
+        String sql = "select * from personas where id = ?";
+        try (Connection con = c.conexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new Persona(rs.getInt("id"), rs.getString("nombre"),
+                            rs.getString("identificacion"), rs.getString("correo"), rs.getString("telefono"));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al buscar persona por ID: " + e.getMessage());
+        }
+        return null;
+    }
+
     public boolean existeIdentificacion(String identificacion) {
         String sql = "select id from personas where identificacion = ?";
         try (Connection con = c.conexion();

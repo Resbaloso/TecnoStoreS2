@@ -10,10 +10,10 @@ public class InicioSesionController {
         InicioSesion i = new InicioSesion();
         int opcion;
         do {
-            // Primero mostramos el menú de la vista y tomamos la opción.
+//              Mostramos el menú de la vista y tomamos la opción.
             opcion = i.mostrarMenuPrincipal();
 
-            // Según la opción seleccionada: registro o inicio de sesión.
+//             Según la opción registro o inicio de sesión.
             switch (opcion) {
                 case 1 -> {
                     Usuario usuarioLogueado = InicioSesionLogica.ejecutarInicioSesion();
@@ -32,6 +32,6 @@ public class InicioSesionController {
                 }
             }
         } while (opcion != 3);
-            return null; // Retorna null si el usuario decidió salir (opción 3)
+            return null; // Retorna nulo si el usuario decidió salir.
     }
 }

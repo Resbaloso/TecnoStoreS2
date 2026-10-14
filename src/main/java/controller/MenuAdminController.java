@@ -1,41 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
+import model.logic.GestionCelularesLogica;
+import model.logic.GestionReportesLogica;
+import model.logic.GestionVentasLogica;
 import view.MenuPrincipalAdmin;
 
-/**
- *
- * @author Usuario
- */
+// Controlador del menú administrador, ejecuta la opción que el administrador reciba
 public class MenuAdminController {
 
-    MenuPrincipalAdmin mpa= new MenuPrincipalAdmin();
-    
-    public void MenuAdmin(){
-            int op;
-            do {
-                op = mpa.mostrarMenuPrincipalAdmin();
-                switch (op) {
-                    case 1 -> {
-                        //Menu gestionar celulares.
-                    }
-                    case 2 -> {
-                        //Menu gestionar ventas.
-                    } 
-                    case 3 -> {
-                        //Menu gestionar reportes.
-                    }
-                    case 4 -> {
-                        System.out.println("Saliendo...");
-                        break;
-                    }
-                    default -> {
-                        System.out.println("Opcion no encontrada!");
-                    }
+    private final MenuPrincipalAdmin mpa = new MenuPrincipalAdmin();
+    private final GestionCelularesLogica gestionCelulares = new GestionCelularesLogica();
+    private final GestionVentasLogica gestionVentas = new GestionVentasLogica();
+    private final GestionReportesLogica gestionReportes = new GestionReportesLogica();
+
+    public void MenuAdmin() {
+        int op;
+        do {
+            op = mpa.mostrarMenuPrincipalAdmin();
+            switch (op) {
+                case 1 -> {
+                    // Delega al módulo de gestión de celulares (marcas, SO, celulares).
+                    gestionCelulares.ejecutar();
                 }
-            } while (op != 4); 
+                case 2 -> {
+                    // Delega al módulo de gestión de ventas y detalles de venta.
+                    gestionVentas.ejecutar();
+                }
+                case 3 -> {
+                    // Delega al módulo de reportes (usa DatosReporteVenta, patrón BodegasFileObject).
+                    gestionReportes.ejecutar();
+                }
+                case 4 -> {
+                    System.out.println("Saliendo...");
+                }
+                default -> {
+                    System.out.println("Opcion no encontrada!");
+                }
+            }
+        } while (op != 4);
     }
 }

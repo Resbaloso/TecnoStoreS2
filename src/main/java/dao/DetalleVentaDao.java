@@ -22,7 +22,7 @@ public class DetalleVentaDao {
             ps.setInt(1, dv.getVentas_fk());
             ps.setInt(2, dv.getCelulares_fk());
             ps.setInt(3, dv.getCantidad());
-            ps.setInt(4, dv.getPrecios_fk());
+            ps.setDouble(4, dv.getPrecios_fk());
             ps.setDouble(5, dv.getSubtotal());
             ps.executeUpdate();
             System.out.println("Detalle de venta creado correctamente! xD");
@@ -38,7 +38,7 @@ public class DetalleVentaDao {
             ps.setInt(1, dv.getVentas_fk());
             ps.setInt(2, dv.getCelulares_fk());
             ps.setInt(3, dv.getCantidad());
-            ps.setInt(4, dv.getPrecios_fk());
+            ps.setDouble(4, dv.getPrecios_fk());
             ps.setDouble(5, dv.getSubtotal());
             ps.setInt(6, dv.getId());
             ps.executeUpdate();
@@ -79,7 +79,7 @@ public class DetalleVentaDao {
                         rs.getInt("ventas_fk"),
                         rs.getInt("celulares_fk"),
                         rs.getInt("cantidad"),
-                        rs.getInt("precio"),
+                        rs.getDouble("precio"),
                         rs.getDouble("subtotal")
                 ));
             }
@@ -99,7 +99,7 @@ public class DetalleVentaDao {
                             rs.getInt("ventas_fk"),
                             rs.getInt("celulares_fk"),
                             rs.getInt("cantidad"),
-                            rs.getInt("precio"),
+                            rs.getDouble("precio"),
                             rs.getDouble("subtotal")
                     );
                 }
@@ -121,7 +121,7 @@ public class DetalleVentaDao {
                             rs.getInt("ventas_fk"),
                             rs.getInt("celulares_fk"),
                             rs.getInt("cantidad"),
-                            rs.getInt("precio"),
+                            rs.getDouble("precio"),
                             rs.getDouble("subtotal")
                     ));
                 }

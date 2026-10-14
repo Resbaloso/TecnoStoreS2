@@ -32,5 +32,14 @@ insert into roles(id, rol) values (2, 'Cliente');
 
 insert into personas (nombre, identificacion, correo, telefono) values ('Admin', '1000000001', 'admin@tecnostore.com', '3016767676');
 insert into usuarios (personas_fk, username, contraseña, roles_fk) values (1, 'admin', 'Admincito36', 1);
-select * from personas;
-select * from usuarios;
+
+insert into marcas (nombre) values ("Samsung");
+insert into marcas (nombre) values ("Apple");
+insert into marcas (nombre) values ("Motorola");
+
+insert into sistemas_operativos (nombre) values ("Android");
+insert into sistemas_operativos (nombre) values ("IOS");
+
+insert into celulares (sku, modelo, marcas_fk, stock, precio, sistemas_operativos_fk, gama) values ("SM-A3756-M-128","Samsung A37 5g 128gb",1,25,1200000.00,1,"media");
+insert into celulares (sku, modelo, marcas_fk, stock, precio, sistemas_operativos_fk, gama) values ("IP-18PROMAX-A-256","Iphone 18 Pro Max 256gb",2,25,6200000.00,2,"alta");
+insert into celulares (sku, modelo, marcas_fk, stock, precio, sistemas_operativos_fk, gama) values ("MR-EDGE60FUSION-M-256","Motorola Edge 60 Fusion 256gb",3,25,1200000.00,1,"media");

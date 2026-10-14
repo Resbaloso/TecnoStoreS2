@@ -88,6 +88,19 @@ public class CelularesDao {
         }
     }
 
+    // Descuenta del stock el número de unidades vendidas.
+    public void descontarStock(int idCelular, int cantidad) {
+        try (Connection con = c.conexion()) {
+            String sql = "update celulares set stock = stock - ? where id = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, cantidad);
+            ps.setInt(2, idCelular);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error al actualizar el stock: " + e.getMessage());
+        }
+    }
+
     public List<Celulares> obtenerCelulares() {
         List<Celulares> lista = new ArrayList<>();
         try (Connection con = c.conexion()) {

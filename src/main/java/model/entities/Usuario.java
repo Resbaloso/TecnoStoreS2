@@ -68,7 +68,4 @@ public class Usuario {
                 """.formatted(id, personas_fk, username, contraseña, roles_fk);
     }
 
-    public String getRolesFk() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

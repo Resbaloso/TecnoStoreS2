@@ -1,14 +1,16 @@
 package model.entities;
 
+// Entidad que representa un detalle de venta.
 public class DetalleVenta {
+
     private int id;
     private int ventas_fk;
     private int celulares_fk;
     private int cantidad;
-    private int precio;
-    private Double subtotal;
+    private double precio;   // decimal(10,2) en la BD.
+    private double subtotal;
 
-    public DetalleVenta(int id, int ventas_fk, int celulares_fk, int cantidad, int precio, Double subtotal) {
+    public DetalleVenta(int id, int ventas_fk, int celulares_fk, int cantidad, double precio, double subtotal) {
         this.id = id;
         this.ventas_fk = ventas_fk;
         this.celulares_fk = celulares_fk;
@@ -45,32 +47,32 @@ public class DetalleVenta {
         this.cantidad = cantidad;
     }
 
-    public int getPrecios_fk() {
+    // Getter con nombre original para no romper compatibilidad con los DAO existentes.
+    public double getPrecios_fk() {
         return precio;
     }
 
-    public void setPrecios_fk(int precios_fk) {
-        this.precio = precios_fk;
+    public void setPrecios_fk(double precio) {
+        this.precio = precio;
     }
 
-    public Double getSubtotal() {
+    public double getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(Double subtotal) {
+    public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
 
     @Override
     public String toString() {
-    return """
-                Id:                           %s
-                Ventas_fk:                    %s
-                Celulares_fk:                 %s
-                Cantidad:                     %s
-                Precios:                      %s
-                Subtotal:                     %s
-                """.formatted(id, ventas_fk, celulares_fk, cantidad, precio, subtotal);
+        return """
+                    Id:                           %s
+                    Ventas_fk:                    %s
+                    Celulares_fk:                 %s
+                    Cantidad:                     %s
+                    Precio:                       $%s
+                    Subtotal:                     $%s
+                    """.formatted(id, ventas_fk, celulares_fk, cantidad, precio, subtotal);
     }
-    
 }

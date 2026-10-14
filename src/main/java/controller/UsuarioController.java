@@ -39,7 +39,7 @@ public class UsuarioController {
         }
 
         int personaId = personasDao.obtenerIdPorIdentificacion(identificacion);
-        if (personaId == -1) {
+        if (personaId == -1) { // Si el id existe continua a guardar la persona en el objeto Usuario
             return false;
         }
 
@@ -47,7 +47,7 @@ public class UsuarioController {
         usuario.setPersonas_fk(personaId);
         usuario.setUsername(username);
         usuario.setContraseña(password);
-        usuario.setRoles_fk(2); // Rol predeterminado: Cliente
+        usuario.setRoles_fk(2); // Rol predeterminado para cliente Cliente
 
         return usuarioDao.registrarUsuario(usuario);
     }

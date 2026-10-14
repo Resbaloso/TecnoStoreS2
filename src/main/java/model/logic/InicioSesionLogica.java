@@ -16,6 +16,7 @@ public class InicioSesionLogica {
     private static final ValidarCorreo validadorCorreo = new ValidarCorreo();
     private static final validarRangoDato validadorRango = new validarRangoDato();
 
+//    Se ejecuta el inicio de sesión:
     public static Usuario ejecutarInicioSesion() {
         System.out.println("INICIO DE SESIÓN:");
         System.out.print("Ingrese su usuario: ");
@@ -24,7 +25,7 @@ public class InicioSesionLogica {
         String password = scanner.nextLine().trim();
 
         Usuario usuario = usuarioDao.iniciarSesion(username, password);
-        if (usuario != null) {
+        if (usuario != null) { // Si el usuario existe le da la bienvenida y retorna su objeto.
             System.out.println("¡Bienvenido, " + usuario.getUsername() + "! Inicio de sesión exitoso.");
             return usuario;
         } else {
@@ -36,7 +37,7 @@ public class InicioSesionLogica {
     public static void ejecutarRegistroUsuario() {
         System.out.println("REGISTRO DE NUEVO USUARIO:");
         
-        // Validacion de Nombre
+        // Validacion del Nombre con Rango de 50 caracteres.
         String nombre;
         while (true) {
             System.out.print("Ingrese su nombre: ");
@@ -128,10 +129,10 @@ public class InicioSesionLogica {
 
         boolean personaGuardada = personasDao.insertarPersona(nuevaPersona);
         
-        if (personaGuardada) {
+        if (personaGuardada) { // Si guardar la persona fu exitoso.
             int personaId = personasDao.obtenerIdPorIdentificacion(identificacion);
             
-            if (personaId != -1) {
+            if (personaId != -1) { // Si el ID es valido entonces se crea el objeto con base a la persona.
                 Usuario nuevoUsuario = new Usuario();
                 nuevoUsuario.setPersonas_fk(personaId);
                 nuevoUsuario.setUsername(username);

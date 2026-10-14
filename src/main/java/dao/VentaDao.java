@@ -100,6 +100,24 @@ public class VentaDao {
         return lista;
     }
 
+    // Crea la venta y retorna el ID generado automáticamente por la base de datos.
+    public int crearYRetornarId(Venta venta) {
+        try (Connection con = c.conexion()) {
+            String sql = "insert into ventas (usuarios_fk, total) values (?,?)";
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, venta.getUsuarios_fk());
+            ps.setDouble(2, venta.getTotal());
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                return rs.getInt(1); // Retorna el ID generado.
+            }
+        } catch (Exception e) {
+            System.out.println("Error al crear la venta: " + e.getMessage());
+        }
+        return -1;
+    }
+
     public Venta buscar(long id) {
         try (Connection con = c.conexion()) {
             Statement st = con.createStatement();

@@ -13,6 +13,11 @@ public class Venta{
         this.total = total;
     }
 
+// Agrega un nuevo setId al Venta para poder actualizar desde el DAO si fuera necesario.
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -46,8 +51,8 @@ public class Venta{
     return """
                 Id:                        %s
                 Usuario_fk:                %s
-                Username:                  %s
-                Total:                     %s
+                Fecha:                     %s
+                Total:                     $%s
                 """.formatted(id, usuarios_fk, fecha, total);    
     }
 

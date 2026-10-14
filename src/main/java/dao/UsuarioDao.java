@@ -137,7 +137,7 @@ public class UsuarioDao {
     public boolean registrarUsuario(Usuario usuario) {
         String sql = "insert into usuarios (personas_fk, username, contraseña, roles_fk) values (?, ?, ?, ?)";
         try (Connection con = c.conexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+            PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, usuario.getPersonas_fk());
             ps.setString(2, usuario.getUsername());
             ps.setString(3, usuario.getContraseña());
@@ -150,16 +150,17 @@ public class UsuarioDao {
         }
     }
 
+//     Se hace una consulta a la base de datos y se verifica si el susuario realemten existe.
     public Usuario iniciarSesion(String username, String password) {
-        String sql = "select id, personas_fk, username, contraseña, roles_fk from usuarios where username = ? AND contraseña = ?";
+        String sql = "select id, personas_fk, username, contraseña, roles_fk from usuarios where username = ? and contraseña = ?";
         try (Connection con = c.conexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+            PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, username);
             ps.setString(2, password);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    Usuario usuario = new Usuario();
-                    usuario.setId(rs.getInt("id"));
+                    Usuario usuario = new Usuario(); // Una vez se verifica que existe.
+                    usuario.setId(rs.getInt("id")); // Extrae los valores de la db y los guarda en el objeto  
                     usuario.setPersonas_fk(rs.getInt("personas_fk"));
                     usuario.setUsername(rs.getString("username"));
                     usuario.setContraseña(rs.getString("contraseña"));
